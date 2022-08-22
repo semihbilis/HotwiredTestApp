@@ -10,12 +10,12 @@
 </head>
 
 <body class="antialiased flex flex-col w-full p-1 md:px-5 lg:px-11 bg-sky-50">
-    <header class="flex flex-row">
-        <div class="basis-1/3 flex items-center space-x-3">
-            <img src="~/dist/images/logo.jpg" width="53" class="rounded-lg" />
-            <h1>Card Application</h1>
+    <header class="flex items-center justify-between">
+        <div class="flex items-center space-x-5 justify-start">
+            <img src="~/dist/images/idesse_logo.svg" class="rounded-lg" />
+            <h1>CardType Application</h1>
         </div>
-        <div class="basis-1/3 items-center space-x-3 flex justify-center">
+        <div class="items-center space-x-3 flex justify-center mx-5">
             <nav class="hidden lg:flex">
                 <ul class="items-center text-center flex space-x-5 ">
                     <li>
@@ -30,34 +30,29 @@
                 </ul>
             </nav>
         </div>
-        <div class="basis-1/3 flex items-center space-x-3 justify-end">
+        <div class="flex items-center space-x-3 justify-end">
             <div class="lg:hidden">
-                <button type="button"
-                    class="w-8 h-8 flex items-center justify-center text-slate-900  hover:text-slate-500">
-                    <span class="sr-only">Navigation</span><svg width="24" height="24" fill="none" aria-hidden="true">
-                        <path
-                            d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <button type="button" class="w-8 h-8 flex items-center justify-center text-slate-900  hover:text-slate-500">
+                    <span class="sr-only">Navigation</span>
+                    <svg width="24" height="24" fill="none" aria-hidden="true">
+                        <path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
             </div>
         </div>
     </header>
-    <main role="main" class="my-1 md:my-5 lg:my-11">
+    <div class="w-full h-1 bg-green-200 my-1"></div>
+    
+    <main role="main" class="my-1 md:my-5 lg:my-11 rounded-tl-3xl rounded-br-3xl bg-green-200 p-6">
         @RenderBody()
     </main>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="container">
+        <div>
             &copy; 2022 - HotwiredTestApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>

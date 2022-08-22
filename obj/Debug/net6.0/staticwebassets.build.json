@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "39wCKAtZ7mCJuW9k1RvkICQzTfDjsAknY+laJndkkVU=",
+  "Hash": "xyyaPmfctPqMjcZnkgLiB/zSXnNusIsjE8JnfUeln10=",
   "Source": "HotwiredTestApp",
   "BasePath": "_content/HotwiredTestApp",
   "Mode": "Default",
@@ -117,6 +117,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\dist\\app.js.map"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\wwwroot\\dist\\images\\idesse_logo.svg",
+      "SourceId": "HotwiredTestApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\wwwroot\\",
+      "BasePath": "_content/HotwiredTestApp",
+      "RelativePath": "dist/images/idesse_logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\images\\idesse_logo.svg"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\wwwroot\\dist\\images\\idesse-symbol.svg",
+      "SourceId": "HotwiredTestApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\wwwroot\\",
+      "BasePath": "_content/HotwiredTestApp",
+      "RelativePath": "dist/images/idesse-symbol.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\images\\idesse-symbol.svg"
     },
     {
       "Identity": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\wwwroot\\dist\\images\\logo.ico",
