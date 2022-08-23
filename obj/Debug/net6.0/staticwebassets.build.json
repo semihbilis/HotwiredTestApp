@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xyyaPmfctPqMjcZnkgLiB/zSXnNusIsjE8JnfUeln10=",
+  "Hash": "szutoJQ8ku6SxdC4sxxzcqPSxw7n0QdS71wJXNe6Hp8=",
   "Source": "HotwiredTestApp",
   "BasePath": "_content/HotwiredTestApp",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\HotwiredTestApp.styles.css",
-      "SourceId": "HotwiredTestApp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/HotwiredTestApp",
-      "RelativePath": "HotwiredTestApp.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\HotwiredTestApp.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HotwiredTestApp.bundle.scp.css",
-      "SourceId": "HotwiredTestApp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/HotwiredTestApp",
-      "RelativePath": "HotwiredTestApp.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HotwiredTestApp.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\DELL\\source\\repos\\GitHub\\HotwiredTestApp\\wwwroot\\dist\\app.css",
       "SourceId": "HotwiredTestApp",

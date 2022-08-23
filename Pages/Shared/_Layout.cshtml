@@ -4,46 +4,47 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - HotwiredTestApp</title>
+    <title>@ViewData["Title"] | Card Type App</title>
     <script src="~/dist/app.js" defer></script>
     <link rel="stylesheet" href="~/dist/app.css" />
 </head>
 
 <body class="antialiased flex flex-col w-full p-1 md:px-5 lg:px-11 bg-sky-50">
     <header class="flex items-center justify-between">
-        <div class="flex items-center space-x-5 justify-start">
-            <img src="~/dist/images/idesse_logo.svg" class="rounded-lg" />
-            <h1>CardType Application</h1>
+        <div>
+            <a asp-page="/Index" class="flex items-center space-x-5 justify-start text-slate-900  hover:text-slate-500">
+                <img src="~/dist/images/idesse_logo.svg" class="rounded-lg" />
+                <h1>Card Types App</h1>
+            </a>
         </div>
         <div class="items-center space-x-3 flex justify-center mx-5">
             <nav class="hidden lg:flex">
                 <ul class="items-center text-center flex space-x-5 ">
                     <li>
-                        <a asp-page="/Index" class="text-slate-900  hover:text-slate-500">Home</a>
+                        <a asp-page="/Main" class="text-slate-900  hover:text-slate-500">Home</a>
                     </li>
                     <li>
                         <a asp-page="/Index" class="text-slate-900  hover:text-slate-500">Card Types</a>
-                    </li>
-                    <li>
-                        <a asp-page="/Index" class="text-slate-900  hover:text-slate-500">Information</a>
                     </li>
                 </ul>
             </nav>
         </div>
         <div class="flex items-center space-x-3 justify-end">
             <div class="lg:hidden">
-                <button type="button" class="w-8 h-8 flex items-center justify-center text-slate-900  hover:text-slate-500">
+                <button type="button"
+                    class="w-8 h-8 flex items-center justify-center text-slate-900  hover:text-slate-500">
                     <span class="sr-only">Navigation</span>
                     <svg width="24" height="24" fill="none" aria-hidden="true">
-                        <path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
             </div>
         </div>
     </header>
     <div class="w-full h-1 bg-green-200 my-1"></div>
-    
+
     <main role="main" class="my-1 md:my-5 lg:my-11 rounded-tl-3xl rounded-br-3xl bg-green-200 p-6">
         @RenderBody()
     </main>
