@@ -1,0 +1,17 @@
+@model HotwiredTestApp.Models.CardType
+
+<turbo-frame id="cardType_@Model.Id">
+    <div class="grid grid-cols-3 grid-rows-4 space-y-5 border-2 p-5 border-sky-300 rounded-3xl border-dotted hover:border-dashed">
+        <form method="post">
+            <input type="text" asp-for="@Model.Definition" name="Definition" />
+            <a asp-page="/CardTypes">Cancel</a>
+            <a asp-page="/CardTypes" asp-page-handler="Save" asp-route-id="@Model.Id">Save</a>
+            <label>Visitable</label>
+            <input type="checkbox" checked="@Model.Visitiable" name="Visitiable" class="col-span-2" />
+            <label>Location Required</label>
+            <input type="checkbox" checked="@Model.LocationRequired" name="LocationRequired" class="col-span-2" />
+            <label>User Account</label>
+            <input type="checkbox" checked="@Model.UserAccount" name="UserAccount" class="col-span-2" />
+        </form>
+    </div>
+</turbo-frame>

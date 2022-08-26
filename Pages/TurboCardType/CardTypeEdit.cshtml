@@ -1,0 +1,7 @@
+@model HotwiredTestApp.Models.CardType
+
+<turbo-stream action="replace" target="cardType_@Model.Id">
+    <template>
+        <partial name="CardTypeView" model="@Model"/>
+    </template>
+</turbo-stream>

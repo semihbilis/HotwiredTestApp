@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\DELL\source\repos\GitHub\HotwiredTestApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/CardTypes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZFR5cGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -37,6 +41,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/TurboCardType/CardTypeAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVyYm9DYXJkVHlwZVxDYXJkVHlwZUFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/TurboCardType/CardTypeAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVyYm9DYXJkVHlwZVxDYXJkVHlwZUFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/TurboCardType/CardTypeDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVyYm9DYXJkVHlwZVxDYXJkVHlwZURlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/TurboCardType/CardTypeEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVyYm9DYXJkVHlwZVxDYXJkVHlwZUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/TurboCardType/CardTypeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVyYm9DYXJkVHlwZVxDYXJkVHlwZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/TurboCardType/CardTypeView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVyYm9DYXJkVHlwZVxDYXJkVHlwZVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DELL/source/repos/GitHub/HotwiredTestApp/Pages/_ViewImports.cshtml]

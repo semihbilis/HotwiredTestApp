@@ -4,25 +4,29 @@ namespace HotwiredTestApp.Models
 {
     public class CardType : IEntity
     {
-        public int Id { get; private set; } = _CartTypeId;
+        private static int _CartTypeLastId = 1;
+
+        public int Id { get; private set; } = _CartTypeLastId;
         public string Definition { get; set; } = string.Empty;
-        public bool IsVisitiable { get; set; } = false;
-        public bool IsLocationRequired { get; set; } = false;
-        public bool IsUserAccount { get; set; } = false;
+        public bool Visitiable { get; set; } = false;
+        public bool LocationRequired { get; set; } = false;
+        public bool UserAccount { get; set; } = false;
 
         public CardType()
         {
         }
-        public CardType(string definition, bool isVisitable = false, bool isLocationRequired = false, bool isUserAccount = false) : base()
+        public CardType(int id)
         {
-            _CartTypeId++;
-            Id = _CartTypeId;
-            Definition = definition;
-            IsVisitiable = isVisitable;
-            IsLocationRequired = isLocationRequired;
-            IsUserAccount = isUserAccount;
+            Id = id;
         }
-
-        private static int _CartTypeId = 0;
+        public CardType(string definition, bool visitable = false, bool locationRequired = false, bool userAccount = false) : base()
+        {
+            _CartTypeLastId++;
+            Id = _CartTypeLastId;
+            Definition = definition;
+            Visitiable = visitable;
+            LocationRequired = locationRequired;
+            UserAccount = userAccount;
+        }
     }
 }

@@ -4,22 +4,13 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="w-full flex justify-center">
-    <div id="divLogin"
-        class="flex flex-col space-y-5 border-2 p-5 border-sky-300 rounded-3xl border-dotted hover:border-dashed">
-        <div class="flex items-center space-x-5">
-            <img src="~/dist/images/idesse-symbol.svg" />
-            <label>Card Types App > @ViewData["Title"]</label>
-        </div>
-        <form method="post" class="flex flex-col space-y-5">
-            <input asp-for=@Model.Username type="text" placeholder="Username" title="Username"
-                class="text-center box-border border-2 border-sky-300 border-dotted hover:border-dashed rounded-full h-11" />
-            <input asp-for=@Model.Password type="text" placeholder="Password" title="Password"
-                class="text-center box-border border-2 border-sky-300 border-dotted hover:border-dashed rounded-full h-11" />
-            <button asp-page="/Index" asp-page-handler="Login" type="submit" title="Login"
-                class="px-5 py-1 box-border border-2 border-sky-300 border-dotted hover:border-dashed rounded-full">
-                Login
-            </button>
-        </form>
-    </div>
-</div>
+<form method="post" class="flex flex-col space-y-5">
+    <input asp-for=@Model.Username type="text" placeholder="Username" title="Username"
+        class="text-center box-border border-2 border-sky-300 border-dotted hover:border-dashed rounded-full h-11" />
+    <input asp-for=@Model.Password type="text" placeholder="Password" title="Password"
+        class="text-center box-border border-2 border-sky-300 border-dotted hover:border-dashed rounded-full h-11" />
+    <button asp-page="/Index" asp-page-handler="Login" type="submit" title="Login"
+        class="px-5 py-1 box-border border-2 border-sky-300 border-dotted hover:border-dashed rounded-full">
+        Login
+    </button>
+</form>

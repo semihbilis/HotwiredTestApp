@@ -1,0 +1,14 @@
+@model HotwiredTestApp.Models.CardType
+
+<turbo-frame id="cardType_@Model.Id">
+    <div class="grid grid-cols-3 items-center text-center gap-3">
+        <label class="text-left">@Model.Definition</label>
+        <div class="items-center">
+            <input type="checkbox" checked="@Model.Visitiable" disabled />
+        </div>
+        <div class="flex space-x-1">
+            <a asp-page="/CardTypes" asp-page-handler="Edit" asp-route-id="@Model.Id">Edit</a>
+            <a asp-page="/CardTypes" asp-page-handler="Delete" asp-route-id="@Model.Id">Delete</a>
+        </div>
+    </div>
+</turbo-frame>

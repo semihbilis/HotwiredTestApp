@@ -1,0 +1,20 @@
+@page
+@model CardTypesModel
+@{
+    ViewData["Title"] = "Card Types";
+}
+
+<turbo-frame id="cardTypes">
+    <a asp-page="/CardTypes" asp-page-handler="Add" asp-route-id="0" class="flex justify-end">Add</a>
+    <div class="space-y-3">
+        <div class="grid grid-cols-3 gap-3 items-center text-center justify-center font-bold">
+            <div>Definition</div>
+            <div>Visitable</div>
+            <div>Edit</div>
+        </div>
+        @foreach (HotwiredTestApp.Models.CardType cardType in Model.CardTypeRepository.CardTypeList)
+        {
+            <partial name="TurboCardType/CardTypeView" model="@cardType"></partial>
+        }
+    </div>
+</turbo-frame>
