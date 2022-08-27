@@ -1,15 +1,25 @@
-﻿@model HotwiredTestApp.Pages.CardTypesModel
+﻿@model CardTypesModel
 
-<turbo-frame id="cardTypes">
-    <div class="space-y-3">
+<turbo-frame id="cardTypesPage">
+    <div class="flex justify-end">
+        <a asp-page="CardTypes" asp-page-handler="Add" data-turbo-frame="cardType_0">Add</a>
+    </div>
+    <div class="space-y-3 max-w-5xl">
+        <turbo-frame id="cardType_0"></turbo-frame>
         <div class="grid grid-cols-3 gap-3 items-center text-center justify-center font-bold">
             <div>Definition</div>
             <div>Visitable</div>
-            <div>Edit</div>
+            <div>Edit / Delete</div>
         </div>
-        @foreach (HotwiredTestApp.Models.CardType cardType in Model.CardTypeRepository.CardTypeList)
-        {
-            <partial name="TurboCardType/CardTypeView" model="@cardType"></partial>
-        }
+        <turbo-frame id="cardTypes">
+            @foreach (var cardType in DataCardType.Instance)
+            {
+                <partial name="TurboCardType/CardTypeView" model="@cardType"></partial>
+            }
+        </turbo-frame>
+    </div>
+
+    <div class="border-t-2 border-sky-300 -mx-5 -mb-5 mt-3 border-dotted hover:border-dashed flex justify-center">
+        <turbo-frame id="labelCardTypeCount" src="?handler=TotalCount"></turbo-frame>
     </div>
 </turbo-frame>

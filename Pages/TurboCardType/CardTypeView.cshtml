@@ -1,12 +1,13 @@
 @model HotwiredTestApp.Models.CardType
 
 <turbo-frame id="cardType_@Model.Id">
-    <div class="grid grid-cols-3 items-center text-center gap-3">
+    <div class="grid grid-cols-3 items-center text-center gap-3 hover:border-y-2 hover:border-dashed border-sky-300 hover:-mx-5 hover:px-5">
         <label class="text-left">@Model.Definition</label>
         <div class="items-center">
-            <input type="checkbox" checked="@Model.Visitiable" disabled />
+            <input type="checkbox" checked="@Model.Visitiable" disabled
+                   class="bg-transparent border-2 border-sky-300 border-dotted hover:border-dashed rounded-3xl" />
         </div>
-        <div class="flex space-x-1">
+        <div class="flex space-x-3 justify-evenly">
             <a asp-page="/CardTypes" asp-page-handler="Edit" asp-route-id="@Model.Id">Edit</a>
             <a asp-page="/CardTypes" asp-page-handler="Delete" asp-route-id="@Model.Id">Delete</a>
         </div>
