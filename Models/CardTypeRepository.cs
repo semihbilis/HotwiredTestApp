@@ -4,10 +4,10 @@ namespace HotwiredTestApp.Models
 {
     public class CardTypeRepository : ICardTypeRepository<CardType>
     {
-        public CardType Add(CardType cardType)
+        public bool Add(CardType cardType)
         {
             DataCardType.Instance.Add(cardType);
-            return cardType;
+            return DataCardType.Instance.Any(c => c.Id == cardType.Id);
         }
 
         public bool Delete(int id)
@@ -16,18 +16,29 @@ namespace HotwiredTestApp.Models
             return DataCardType.Instance.Remove(cardType);
         }
 
-        public CardType Get(int id) => DataCardType.Instance.FirstOrDefault(c => c.Id == id);
+        public CardType Get(int id)
+        {
+            try
+            {
+                return DataCardType.Instance.First(c => c.Id == id);
+            }
+            catch (InvalidOperationException)
+            {
+                throw new InvalidOperationException($"Card type {id} not found.");
+            }
+        }
 
         public List<CardType> GetAll() => DataCardType.Instance;
 
         public CardType Update(CardType cardType)
         {
-            CardType cT = DataCardType.Instance.First(c => c.Id == cardType.Id);
-            cT.Definition = cardType.Definition;
-            cT.Visitiable = cardType.Visitiable;
-            cT.LocationRequired = cardType.LocationRequired;
-            cT.UserAccount = cardType.UserAccount;
-            return cT;
+            Delete(cardType.Id);
+            if (Add(cardType))
+            {
+                return cardType;
+            }
+            else
+                throw new ArgumentException($"Card type {cardType.Id} not update.");
         }
     }
 }

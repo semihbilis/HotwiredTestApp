@@ -1,25 +1,47 @@
 ﻿@model CardTypesModel
 
 <turbo-frame id="cardTypesPage">
-    <div class="flex justify-end">
-        <a asp-page="CardTypes" asp-page-handler="Add" data-turbo-frame="cardType_0">Add</a>
+    <div class="flex justify-between">
+        <a asp-page="CardTypes" asp-page-handler="AddMoreAutomatic" class="w-5">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 55 55" style="enable-background:new 0 0 55 55;" xml:space="preserve">
+            <g>
+            <path d="M49,8.5v-8H0v47h7v7h48v-46H49z M2,45.5v-43h45v6H7v37H2z M53,52.5H9v-5v-37h40h4V52.5z" />
+            <path d="M42,30.5H32v-10c0-0.553-0.447-1-1-1s-1,0.447-1,1v10H20c-0.553,0-1,0.447-1,1s0.447,1,1,1h10v10c0,0.553,0.447,1,1,1
+		s1-0.447,1-1v-10h10c0.553,0,1-0.447,1-1S42.553,30.5,42,30.5z" />
+            </g>
+            </svg>
+        </a>
+        <a asp-page="CardTypes" asp-page-handler="Add" data-turbo-frame="cardType_0" class="w-5">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+            <g>
+            <path d="M0,0v60h60V0H0z M58,58H2V2h56V58z" />
+            <polygon points="29,51 31,51 31,31 51,31 51,29 31,29 31,9 29,9 29,29 9,29 9,31 29,31 	" />
+                </g>
+            </svg>
+        </a>
     </div>
     <div class="space-y-3 max-w-5xl">
         <turbo-frame id="cardType_0"></turbo-frame>
         <div class="grid grid-cols-3 gap-3 items-center text-center justify-center font-bold">
             <div>Definition</div>
             <div>Visitable</div>
-            <div>Edit / Delete</div>
+            <div class="flex space-x-3 justify-evenly py-1">
+                <div>Edit</div>
+                <div> / </div>
+                <div>Delete</div>
+            </div>
         </div>
         <turbo-frame id="cardTypes">
             @foreach (var cardType in DataCardType.Instance)
             {
-                <partial name="TurboCardType/CardTypeView" model="@cardType"></partial>
+                <partial name="TurboCardType/CardTypeView" model="@cardType" />
             }
         </turbo-frame>
     </div>
 
     <div class="border-t-2 border-sky-300 -mx-5 -mb-5 mt-3 border-dotted hover:border-dashed flex justify-center">
-        <turbo-frame id="labelCardTypeCount" src="?handler=TotalCount"></turbo-frame>
+        <partial name="TurboCardType/CardTypeCount" />
     </div>
 </turbo-frame>

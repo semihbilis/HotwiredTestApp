@@ -1,3 +1,9 @@
 ﻿@model int
 
-<turbo-stream action="remove" target="cardType_@Model"></turbo-stream>
+<turbo-stream action="remove" target="cardType_@Model" />
+
+<turbo-stream action="replace" target="labelCardTypeCount">
+    <template>
+        <partial name="TurboCardType/CardTypeCount" />
+    </template>
+</turbo-stream>

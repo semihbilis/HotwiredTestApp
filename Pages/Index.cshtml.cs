@@ -13,9 +13,9 @@ namespace HotwiredTestApp.Pages
         }
 
         [BindProperty(SupportsGet = true)]
-        public string Username { get; set; }
+        public string Username { get; set; } = String.Empty;
         [BindProperty(SupportsGet = true)]
-        public string Password { get; set; }
+        public string Password { get; set; } = String.Empty;
 
         public void OnGet()
         {
@@ -23,10 +23,9 @@ namespace HotwiredTestApp.Pages
 
         public IActionResult OnPostLogin(string username, string password)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                return RedirectToPage("Index");
-            else
+            if (!string.IsNullOrEmpty(username) || !string.IsNullOrEmpty(password))
                 return RedirectToPage("Main");
+            return RedirectToPage("Index");
         }
     }
 }

@@ -1,60 +1,56 @@
 @model HotwiredTestApp.Models.CardType
 
 <turbo-frame id="cardType_@Model.Id">
-    <div class="flex border-y-2 border-sky-300 -mx-5 my-1 border-dotted hover:border-dashed">
+    <div class="flex border-y-2 border-sky-300 -mx-5 border-dotted hover:border-dashed">
         <form method="post" class="w-full">
             <div class="flex items-center justify-between px-2 py-1">
                 <a asp-page="CardTypes" asp-page-handler="Types" class="w-5">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                         x="0px" y="0px" viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;"
-                         xml:space="preserve">
-                    <g>
-                    <g>
-                    <path d="M244.5,0C109.3,0,0,109.3,0,244.5S109.3,489,244.5,489S489,379.7,489,244.5S379.7,0,244.5,0z M244.5,448.4
+                        x="0px" y="0px" viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;"
+                        xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M244.5,0C109.3,0,0,109.3,0,244.5S109.3,489,244.5,489S489,379.7,489,244.5S379.7,0,244.5,0z M244.5,448.4
 			c-112.4,0-203.9-91.5-203.9-203.9S132.1,40.6,244.5,40.6s203.9,91.5,203.9,203.9S356.9,448.4,244.5,448.4z" />
-                    <path d="M354.8,134.2c-8.3-8.3-20.8-8.3-29.1,0l-81.2,81.2l-81.1-81.1c-8.3-8.3-20.8-8.3-29.1,0s-8.3,20.8,0,29.1l81.1,81.1
+                                <path d="M354.8,134.2c-8.3-8.3-20.8-8.3-29.1,0l-81.2,81.2l-81.1-81.1c-8.3-8.3-20.8-8.3-29.1,0s-8.3,20.8,0,29.1l81.1,81.1
 			l-81.1,81.1c-8.3,8.3-8.6,21.1,0,29.1c6.5,6,18.8,10.4,29.1,0l81.1-81.1l81.1,81.1c12.4,11.7,25,4.2,29.1,0
 			c8.3-8.3,8.3-20.8,0-29.1l-81.1-81.1l81.1-81.1C363.1,155,363.1,142.5,354.8,134.2z" />
-                                </g>
                             </g>
-                        </svg>
+                        </g>
+                    </svg>
                 </a>
-                <button asp-page="CardTypes" asp-page-handler="Save" asp-route-id="@Model.Id" class="w-5">
+                <button type="submit" asp-page="CardTypes" asp-page-handler="Save" asp-route-id="@Model.Id" class="w-5">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 460.002 460.002"
-                         style="enable-background:new 0 0 460.002 460.002;" xml:space="preserve">
-                    <g>
-                    <g>
-                    <path d="M427.137,0C408.93,0,51.379,0,32.865,0C14.743,0,0,14.743,0,32.865v394.272c0,18.122,14.743,32.865,32.865,32.865
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 460.002 460.002"
+                        style="enable-background:new 0 0 460.002 460.002;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M427.137,0C408.93,0,51.379,0,32.865,0C14.743,0,0,14.743,0,32.865v394.272c0,18.122,14.743,32.865,32.865,32.865
 			c0,0,374.895,0,394.272,0c18.122,0,32.865-14.743,32.865-32.865V32.865C460.001,14.743,445.258,0,427.137,0z M245.812,30h50.995
 			v54.466h-50.995V30z M107.198,30h108.615v69.466c0,8.284,6.716,15,15,15h80.995c8.284,0,15-6.716,15-15V30h26.377v119.636H107.198
 			V30z M107.007,430.001V308.673h245.986v121.328H107.007z M430.002,427.137L430.002,427.137c-0.001,1.58-1.286,2.865-2.866,2.865
 			h-44.143V293.673c0-8.284-6.716-15-15-15H92.007c-8.284,0-15,6.716-15,15v136.328H32.865c-1.58,0-2.865-1.285-2.865-2.865V32.865
 			C30,31.285,31.285,30,32.865,30h44.333v134.636c0,8.284,6.716,15,15,15h275.986c8.284,0,15-6.716,15-15V30h43.953
 			c1.58,0,2.865,1.285,2.865,2.865V427.137z" />
-                                </g>
                             </g>
-                        </svg>
+                        </g>
+                    </svg>
                 </button>
             </div>
-            <div class="flex flex-col px-5 pb-1">
+            <div class="flex flex-col px-5">
                 <input type="hidden" asp-for="@Model.Id" name="Id" />
-                <input type="text" asp-for="@Model.Definition" name="Definition"
-                       class="bg-transparent border-2 border-sky-300 border-dotted hover:border-dashed rounded-3xl" />
-                <div class="flex items-center justify-between hover:border-y-2 hover:border-dashed border-sky-300 hover:-mx-5 hover:px-5">
+                <input type="text" asp-for="@Model.Definition" name="Definition" placeholder="Definition" class="border-2 border-sky-300 border-dotted hover:border-dashed rounded-3xl" />
+                <div class="flex items-center justify-between hover:border-y-2 hover:border-dashed border-sky-300 hover:-mx-5 hover:px-5 py-0.5 hover:py-0">
                     <label class="flex">Visitable</label>
-                    <input type="checkbox" asp-for="@Model.Visitiable" name="Visitiable"
-                           class="bg-transparent border-2 border-sky-300 border-dotted hover:border-dashed rounded-full" />
+                    <input type="checkbox" asp-for="@Model.Visitiable" name="Visitiable" class="border-2 border-sky-300 border-double rounded-full" />
                 </div>
-                <div class="flex items-center justify-between hover:border-y-2 hover:border-dashed border-sky-300 hover:-mx-5 hover:px-5">
+                <div class="flex items-center justify-between hover:border-y-2 hover:border-dashed border-sky-300 hover:-mx-5 hover:px-5 py-0.5 hover:py-0">
                     <label class="flex">Location Required</label>
-                    <input type="checkbox" asp-for="@Model.LocationRequired" name="LocationRequired"
-                           class="bg-transparent border-2 border-sky-300 border-dotted hover:border-dashed rounded-full" />
+                    <input type="checkbox" asp-for="@Model.LocationRequired" name="LocationRequired" class="border-2 border-sky-300 border-double rounded-full" />
                 </div>
-                <div class="flex items-center justify-between hover:border-y-2 hover:border-dashed border-sky-300 hover:-mx-5 hover:px-5">
+                <div class="flex items-center justify-between hover:border-y-2 hover:border-dashed border-sky-300 hover:-mx-5 hover:px-5 py-0.5 hover:py-0">
                     <label class="flex">User Account</label>
-                    <input type="checkbox" asp-for="@Model.UserAccount" name="UserAccount"
-                           class="bg-transparent border-2 border-sky-300 border-dotted hover:border-dashed rounded-full" />
+                    <input type="checkbox" asp-for="@Model.UserAccount" name="UserAccount" class="border-2 border-sky-300 border-double-dashed rounded-full" />
                 </div>
             </div>
         </form>

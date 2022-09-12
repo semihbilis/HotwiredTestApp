@@ -1,25 +1,37 @@
 ﻿using HotwiredTestApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Dynamic;
 
 namespace HotwiredTestApp.Pages
 {
     public class CardTypesModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-        private CardTypeRepository _cardTypeRepository;
+        private readonly ILogger<CardTypesModel> _logger;
+        private CardTypeRepository _cardTypeRepository = new CardTypeRepository();
         private const string locationTurboCardType = "TurboCardType/";
+        private Random random = new Random();
+        private bool randomBool { get { return random.Next() > Int32.MaxValue / 2 ? true : false; } }
 
-        public CardTypesModel(ILogger<IndexModel> logger)
+        public CardTypesModel(ILogger<CardTypesModel> logger)
         {
             _logger = logger;
-            _cardTypeRepository = new CardTypeRepository();
+        }
+
+        public PartialViewResult OnGetAddMoreAutomatic()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                string definition = "Definition " + i.ToString();
+                CardType cardType = new CardType(definition, randomBool, randomBool, randomBool);
+                _cardTypeRepository.Add(cardType);
+            }
+            return Partial(locationTurboCardType + "CardTypeList");
         }
 
         public PartialViewResult OnGetTotalCount()
         {
             int totalCount = _cardTypeRepository.GetAll().Count;
+            Response.ContentType = "text/vnd.turbo-stream.html";
             return Partial(locationTurboCardType + "CardTypeCount", totalCount);
         }
 
@@ -28,7 +40,7 @@ namespace HotwiredTestApp.Pages
             return Partial(locationTurboCardType + "CardTypeList");
         }
 
-        public PartialViewResult OnGetEdit(int id)
+        public PartialViewResult OnGetEdit(int id) // --------------- ÇALIŞMIYOR KONTROL EDİLECEK
         {
             CardType cardType = _cardTypeRepository.Get(id);
             return Partial(locationTurboCardType + "CardTypeAddEdit", cardType);
@@ -36,41 +48,37 @@ namespace HotwiredTestApp.Pages
 
         public PartialViewResult OnGetAdd()
         {
-            CardType cardType = new CardType(0);
+            CardType cardType = new CardType();
             return Partial(locationTurboCardType + "CardTypeAddEdit", cardType);
         }
 
-        public PartialViewResult OnPostDelete(int id)
+        public PartialViewResult OnGetDelete(int id)
         {
-            bool isSuccess = _cardTypeRepository.Delete(id);
-            if (isSuccess)
+            if (_cardTypeRepository.Delete(id))
+            {
+                Response.ContentType = "text/vnd.turbo-stream.html";
                 return Partial(locationTurboCardType + "CardTypeDelete", id);
+            }
             else
-                return Partial(locationTurboCardType + "CardTypeList", this);
+                return Partial(locationTurboCardType + "CardTypeList");
         }
 
         public PartialViewResult OnPostSave(int Id, string Definition, bool Visitiable, bool LocationRequired, bool UserAccount)
         {
             if (string.IsNullOrEmpty(Definition))
             {
-                return Partial(locationTurboCardType + "CardTypeList", this);
+                return Partial(locationTurboCardType + "CardTypeList");
             }
+            CardType cardType = new CardType(Definition, Visitiable, LocationRequired, UserAccount, Id);
+            Response.ContentType = "text/vnd.turbo-stream.html";
             if (Id == 0)
             {
-                CardType newCardType = new CardType(Definition, Visitiable, LocationRequired, UserAccount);
-                _cardTypeRepository.Add(newCardType);
-                Response.ContentType = "text/vnd.turbo-stream.html";
-                return Partial(locationTurboCardType + "CardTypeAdd", newCardType);
+                _cardTypeRepository.Add(cardType);
+                return Partial(locationTurboCardType + "CardTypeAdd", cardType);
             }
             else
             {
-                CardType cardType = _cardTypeRepository.Get(Id);
-                cardType.Definition = Definition;
-                cardType.Visitiable = Visitiable;
-                cardType.LocationRequired = LocationRequired;
-                cardType.UserAccount = UserAccount;
                 _cardTypeRepository.Update(cardType);
-                Response.ContentType = "text/vnd.turbo-stream.html";
                 return Partial(locationTurboCardType + "CardTypeEdit", cardType);
             }
         }
@@ -87,7 +95,7 @@ namespace HotwiredTestApp.Pages
                 {
                     _Instance = new List<CardType>();
                     _Instance.Add(new CardType("Personel", userAccount: true));
-                    _Instance.Add(new CardType("Eczacı", true, true));
+                    _Instance.Add(new CardType("Eczacı", true, locationRequired: true));
                     _Instance.Add(new CardType("Doktor", true));
                     _Instance.Add(new CardType("Diğer"));
                     _Instance.Add(new CardType("Diş Hekimi", true));

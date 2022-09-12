@@ -704,6 +704,9 @@ select {
 .w-5 {
   width: 1.25rem;
 }
+.w-7 {
+  width: 1.75rem;
+}
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -730,9 +733,6 @@ select {
 }
 .justify-evenly {
   justify-content: space-evenly;
-}
-.gap-1 {
-  gap: 0.25rem;
 }
 .gap-3 {
   gap: 0.75rem;
@@ -787,11 +787,14 @@ select {
 .border-t-2 {
   border-top-width: 2px;
 }
-.border-dashed {
-  border-style: dashed;
-}
 .border-dotted {
   border-style: dotted;
+}
+.border-double {
+  border-style: double;
+}
+.border-hidden {
+  border-style: hidden;
 }
 .border-sky-300 {
   --tw-border-opacity: 1;
@@ -808,9 +811,6 @@ select {
 .bg-sky-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(125 211 252 / var(--tw-bg-opacity));
-}
-.bg-transparent {
-  background-color: transparent;
 }
 .p-1 {
   padding: 0.25rem;
@@ -832,6 +832,14 @@ select {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -868,9 +876,9 @@ select {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
-.hover\:px-10:hover {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+.hover\:py-0:hover {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .hover\:text-slate-500:hover {
   --tw-text-opacity: 1;

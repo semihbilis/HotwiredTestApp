@@ -1,11 +1,19 @@
 @model HotwiredTestApp.Models.CardType
 
 <turbo-stream action="replace" target="cardType_0">
-    <template><turbo-item id="cardType_0"></turbo-item></template>
+    <template>
+        <turbo-frame id="cardType_0"></turbo-frame>
+    </template>
 </turbo-stream>
 
 <turbo-stream action="append" target="cardTypes">
     <template>
         <partial name="TurboCardType/CardTypeView" model="@Model" />
+    </template>
+</turbo-stream>
+
+<turbo-stream action="replace" target="labelCardTypeCount">
+    <template>
+        <partial name="TurboCardType/CardTypeCount" />
     </template>
 </turbo-stream>
